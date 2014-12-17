@@ -1,0 +1,20 @@
+
+/// The max width for mobile and min width for tablets.
+@breakpoint-mobile-tablet: 760px;
+/// The max width for devices (mobile and tablet) and min width for desktops.
+@breakpoint-device-desktop: 1240px;
+
+.mobile(@rules) {
+  @media screen and (max-width: @breakpoint-mobile-tablet) { @rules(); }
+}
+.tablet(@rules) {
+  @media screen and (min-width: @breakpoint-mobile-tablet) { @rules(); }
+}
+
+.device(@rules) {
+  @media screen and (max-width: @breakpoint-device-desktop) { @rules(); }
+}
+.desktop(@rules) {
+  @media screen and (min-width: @breakpoint-device-desktop) { @rules(); }
+}
+

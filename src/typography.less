@@ -24,31 +24,53 @@
 .paper-typography-display1 {
   .paper-typography-mixin('regular'; 34px; @leading: 40px);
 }
+
 .paper-typography-headline {
   .paper-typography-mixin('regular'; 24px; @leading: 32px);
 }
+
 .paper-typography-title {
   .paper-typography-mixin('medium'; 20px; @tracking: 5; @singleline: true);
 }
+
 .paper-typography-subhead2 {
-  .paper-typography-mixin('regular'; 16px; @leading: 28px; @tracking: 10); // device
-  .paper-typography-mixin('regular'; 15px; @leading: 28px; @tracking: 10); // desktop
+  .device({
+    .paper-typography-mixin('regular'; 16px; @leading: 28px; @tracking: 10);
+  });
+  .desktop({
+    .paper-typography-mixin('regular'; 15px; @leading: 28px; @tracking: 10);
+  });
 }
 .paper-typography-subhead1 {
-  .paper-typography-mixin('regular'; 16px; @leading: 24px; @tracking: 10); // device
-  .paper-typography-mixin('regular'; 15px; @leading: 24px; @tracking: 10); // desktop
+  .device({
+    .paper-typography-mixin('regular'; 16px; @leading: 24px; @tracking: 10);
+  });
+  .desktop({
+    .paper-typography-mixin('regular'; 15px; @leading: 24px; @tracking: 10);
+  });
 }
+
 .paper-typography-body2 {
-  .paper-typography-mixin('medium'; 14px; @leading: 24px; @tracking: 10); // device
-  .paper-typography-mixin('medium'; 13px; @leading: 24px; @tracking: 10); // desktop
+  .device({
+    .paper-typography-mixin('medium'; 14px; @leading: 24px; @tracking: 10);
+  });
+  .desktop({
+    .paper-typography-mixin('medium'; 13px; @leading: 24px; @tracking: 10);
+  });
 }
 .paper-typography-body1 {
-  .paper-typography-mixin('regular'; 14px; @leading: 20px; @tracking: 10); // device
-  .paper-typography-mixin('regular'; 13px; @leading: 20px; @tracking: 10); // desktop
+  .device({
+    .paper-typography-mixin('regular'; 14px; @leading: 20px; @tracking: 10);
+  });
+  .desktop({
+    .paper-typography-mixin('regular'; 13px; @leading: 20px; @tracking: 10);
+  });
 }
+
 .paper-typography-caption {
   .paper-typography-mixin('regular'; 12px; @tracking: 20; @singleline: true);
 }
+
 .paper-typography-button {
   .paper-typography-mixin('medium'; 14px; @singleline: true);
   text-transform: uppercase;
