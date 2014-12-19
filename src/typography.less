@@ -12,25 +12,37 @@
   & when (isnumber(@leading)) { line-height: @leading; }
 }
 
+@paper-typography-darkbg: false;
+.paper-typography-color-mixin(@aBlack, @aWhite) {
+  & when not (@paper-typography-darkbg) { color: fade(#000000, @aBlack); }
+  & when (@paper-typography-darkbg) { color: fade(#ffffff, @aWhite); }
+}
+
 .paper-typography-display4 {
   .paper-typography-mixin('light'; 112px; @tracking: -10; @singleline: true);
+  .paper-typography-color-mixin(54%, 70%);
 }
 .paper-typography-display3 {
   .paper-typography-mixin('regular'; 56px; @tracking: -5; @singleline: true);
+  .paper-typography-color-mixin(54%, 70%);
 }
 .paper-typography-display2 {
   .paper-typography-mixin('regular'; 45px; @leading: 48px);
+  .paper-typography-color-mixin(54%, 70%);
 }
 .paper-typography-display1 {
   .paper-typography-mixin('regular'; 34px; @leading: 40px);
+  .paper-typography-color-mixin(54%, 70%);
 }
 
 .paper-typography-headline {
   .paper-typography-mixin('regular'; 24px; @leading: 32px);
+  .paper-typography-color-mixin(87%, 100%);
 }
 
 .paper-typography-title {
   .paper-typography-mixin('medium'; 20px; @tracking: 5; @singleline: true);
+  .paper-typography-color-mixin(87%, 100%);
 }
 
 .paper-typography-subhead2 {
@@ -40,6 +52,7 @@
   .desktop({
     .paper-typography-mixin('regular'; 15px; @leading: 28px; @tracking: 10);
   });
+  .paper-typography-color-mixin(87%, 100%);
 }
 .paper-typography-subhead1 {
   .device({
@@ -48,6 +61,7 @@
   .desktop({
     .paper-typography-mixin('regular'; 15px; @leading: 24px; @tracking: 10);
   });
+  .paper-typography-color-mixin(87%, 100%);
 }
 
 .paper-typography-body2 {
@@ -57,6 +71,7 @@
   .desktop({
     .paper-typography-mixin('medium'; 13px; @leading: 24px; @tracking: 10);
   });
+  .paper-typography-color-mixin(87%, 100%);
 }
 .paper-typography-body1 {
   .device({
@@ -65,13 +80,16 @@
   .desktop({
     .paper-typography-mixin('regular'; 13px; @leading: 20px; @tracking: 10);
   });
+  .paper-typography-color-mixin(87%, 100%);
 }
 
 .paper-typography-caption {
   .paper-typography-mixin('regular'; 12px; @tracking: 20; @singleline: true);
+  .paper-typography-color-mixin(54%, 70%);
 }
 
 .paper-typography-button {
   .paper-typography-mixin('medium'; 14px; @singleline: true);
+  .paper-typography-color-mixin(87%, 100%);
   text-transform: uppercase;
 }
