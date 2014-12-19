@@ -1,10 +1,12 @@
 .paper-toolbar {
+  .paper-shadow(1);
+  .paper-typography-title();
   .mobile({
     height: @increment-mobile-portrait;
   });
   .tablet({
     height: @increment-tablet-desktop;
   });
-  .paper-shadow(1);
-  .paper-typography-title();
+  display: flex;
+  align-items: center;
 }
