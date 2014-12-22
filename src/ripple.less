@@ -1,32 +1,33 @@
+@paper-ripple-defaults: {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -1px -1px;
+  width: 2px;
+  height: 2px;
+  border-radius: 50%;
+  opacity: 0;
+  //transition+: opacity .2s ease;
+};
+
 .paper-ripple() {
   position: relative;
   overflow: hidden;
-  &::after {
-    content: '';
-    display: block;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin: -1px -1px;
-    width: 2px;
-    height: 2px;
-    border-radius: 50%;
+  &:after {
+    @paper-ripple-defaults();
     background: #000000;
-    opacity: 0;
     -webkit-animation: ripple .4s 1;
   }
 }
 
-@-webkit-keyframes ripple {
-  0% {
-    transform: scale(20);
-    opacity: 0;
-  }
-  50% {
-    opacity: .1;
-  }
-  100% {
-    transform: scale(45);
-    opacity: 0;
+.paper-ripple('pulsing') {
+  position: relative;
+  overflow: hidden;
+  &:after {
+    @paper-ripple-defaults();
+    background: #ffffff;
+    -webkit-animation: ripple-pulsing 3s infinite;
   }
 }

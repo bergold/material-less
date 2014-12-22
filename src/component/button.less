@@ -12,11 +12,16 @@
 .paper-flat-button {
   .paper-button();
   transition: background .2s ease;
+  outline: none;
   &:hover {
     background: fade(#999999, 20%);
   }
   &:active {
     .paper-ripple();
+    background: fade(#999999, 40%);
+  }
+  &:focus:not(:active) {
+    .paper-ripple('pulsing');
     background: fade(#999999, 40%);
   }
 }
