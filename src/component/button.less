@@ -1,28 +1,31 @@
 .paper-button {
   .paper-typography-button();
+  .paper-ripple-prepare();
+  outline: none;
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   margin: 0 4px;
   padding: 0 8px;
   height: 36px;
   min-width: 88px;
   cursor: default;
   border-radius: 2px;
+  transition: background-color .2s ease;
 }
 
 .paper-flat-button {
   .paper-button();
-  transition: background .2s ease;
-  outline: none;
+
   &:hover {
     background: fade(#999999, 20%);
   }
   &:active {
-    .paper-ripple();
+    .paper-ripple-trigger();
     background: fade(#999999, 40%);
   }
   &:focus:not(:active) {
-    .paper-ripple('pulsing');
+    .paper-ripple-puls();
     background: fade(#999999, 50%);
   }
 }

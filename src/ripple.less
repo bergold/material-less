@@ -1,33 +1,33 @@
-@paper-ripple-defaults: {
-  content: '';
-  display: block;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin: -1px -1px;
-  width: 2px;
-  height: 2px;
-  border-radius: 50%;
-  opacity: 0;
-  //transition+: opacity .2s ease;
-};
 
-.paper-ripple() {
+.paper-ripple-prepare(@color: #000) {
   position: relative;
   overflow: hidden;
+
   &:after {
-    @paper-ripple-defaults();
-    background: #000000;
-    -webkit-animation: ripple .4s 1;
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0; left: 0;
+    bottom: 0; right: 0;
+    z-index: -1;
+    opacity: 0;
+    background-image: radial-gradient(circle, fade(@color, 12%) 50%, rgba(0,0,0,0) 50%);
+    background-size: 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    transition+: background-color .3s ease-in-out;
   }
 }
 
-.paper-ripple('pulsing') {
-  position: relative;
-  overflow: hidden;
+.paper-ripple-trigger() {
   &:after {
-    @paper-ripple-defaults();
-    background: #ffffff;
-    -webkit-animation: ripple-pulsing 3s infinite;
+    -webkit-animation: ripple .3s 1 ease-out;
+  }
+}
+
+.paper-ripple-puls(@bg: none) {
+  &:after {
+    -webkit-animation: ripple-pulsing 2s infinite;
+    & when (iscolor(@bg)) { background-color: @bg; }
   }
 }
